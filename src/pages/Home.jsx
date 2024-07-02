@@ -5,7 +5,9 @@ function Home() {
   return (
     <>
       <Layout>
-        <h1>Home</h1>
+       <div className="h-[90vh]">
+
+       </div>
       </Layout>
     </> 
   );
