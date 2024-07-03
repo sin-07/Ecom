@@ -5,7 +5,7 @@ function Footer() {
     <>
       <footer  >
         <div className="w-full bg-black text-white">
-          <div className="px-5 container mx-auto flex justify-between items-center md:flex-row flex-col md:flex-nowrap flex-wrap md:text-left text-center ">
+          <div className="px-5 container mx-auto flex justify-between items-center md:flex-row flex-col md:flex-nowrap flex-wrap md:text-left text-center">
             <div>
               <h3 className="text-2xl font-bold">
                 my<span className="text-red-500">Shop</span>
