@@ -81,7 +81,9 @@ function Navbar() {
             <Link to="/cart">
               <FaCartShopping size={23}/>
             </Link>
-              <FaHamburger size={23} className="block md:hidden" onClick={toggle}/>
+            {
+              isShow?"":<FaHamburger size={23} className="block md:hidden" onClick={toggle}/>
+            }
           </div>
         </div>
       </header>
