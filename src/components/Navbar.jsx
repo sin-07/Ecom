@@ -5,20 +5,18 @@ import { FaHamburger } from "react-icons/fa";
 import { GiSkullCrossedBones } from "react-icons/gi";
 
 function Navbar() {
-
-  const[isShow, setisShow] = useState(false)
-  const toggle = ()=>{
-    if (isShow===false) {
-      setisShow(true)
+  const [isShow, setisShow] = useState(false);
+  const toggle = () => {
+    if (isShow === false) {
+      setisShow(true);
+    } else {
+      setisShow(false);
     }
-    else{
-      setisShow(false)
-    }
-  }
+  };
   // const toggleOff = ()=>{
   //   setIsOpen(false)
   // }
-  
+
   return (
     <>
       <header className="bg-slate-50 border-b border-gray-200 shadow-md relative">
@@ -38,6 +36,11 @@ function Navbar() {
                   Home
                 </li>
               </Link>
+              <Link to="/AllProducts">
+                <li className=" cursor-pointer hover:text-gray-400 font-semibold">
+                  AllProducts
+                </li>
+              </Link>
               <li className=" cursor-pointer hover:text-gray-400 font-semibold">
                 Home
               </li>
@@ -50,40 +53,55 @@ function Navbar() {
             </ul>
           </div>
 
-          {
-            isShow?<div className="">
-            <ul className="absolute flex-col z-10 bg-red-400 top-[74px] left-0 h-screen w-full items-center justify-center gap-5 text-center ">
-              <Link to="/">
+          {isShow ? (
+            <div className="">
+              <ul className="absolute flex-col z-10 bg-red-400 top-[74px] left-0 h-screen w-full items-center justify-center gap-5 text-center ">
+                <Link to="/">
+                  <li className=" cursor-pointer hover:text-gray-400 font-semibold mt-6">
+                    Home
+                  </li>
+                </Link>
+                <Link to="/AllProducts">
+                  <li className=" cursor-pointer hover:text-gray-400 font-semibold mt-6">
+                    AllProducts
+                  </li>
+                </Link>
                 <li className=" cursor-pointer hover:text-gray-400 font-semibold mt-6">
                   Home
                 </li>
-              </Link>
-              <li className=" cursor-pointer hover:text-gray-400 font-semibold mt-6">
-                Home
-              </li>
-              <li className=" cursor-pointer hover:text-gray-400 font-semibold mt-6">
-                Home
-              </li>
-              <li className=" cursor-pointer hover:text-gray-400 font-semibold mt-6">
-                Home
-              </li>
-            </ul>
-            <GiSkullCrossedBones onClick={toggle} size={25} className="absolute z-10 top-[80px] right-4"/> 
-          </div>:""
+                <li className=" cursor-pointer hover:text-gray-400 font-semibold mt-6">
+                  Home
+                </li>
+                <li className=" cursor-pointer hover:text-gray-400 font-semibold mt-6">
+                  Home
+                </li>
+              </ul>
+              <GiSkullCrossedBones
+                onClick={toggle}
+                size={25}
+                className="absolute z-10 top-[80px] right-4"
+              />
+            </div>
+          ) : (
+            ""
+          )}
 
-          }
-
-          
           <div className="flex items-center justify-center gap-5">
             <button className=" cursor-pointer hover:text-white hover:bg-black duration-500 ease-in-out font-semibold border px-2 py-1 rounded-md bg-white">
               Login
             </button>
             <Link to="/cart">
-              <FaCartShopping size={23}/>
+              <FaCartShopping size={23} />
             </Link>
-            {
-              isShow?"":<FaHamburger size={23} className="block md:hidden" onClick={toggle}/>
-            }
+            {isShow ? (
+              ""
+            ) : (
+              <FaHamburger
+                size={23}
+                className="block md:hidden"
+                onClick={toggle}
+              />
+            )}
           </div>
         </div>
       </header>
