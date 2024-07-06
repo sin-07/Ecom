@@ -87,9 +87,11 @@ function Navbar() {
           )}
 
           <div className="flex items-center justify-center gap-5">
+            <Link to="/Login">
             <button className=" cursor-pointer hover:text-white hover:bg-black duration-500 ease-in-out font-semibold border px-2 py-1 rounded-md bg-white">
               Login
             </button>
+            </Link>
             <Link to="/cart">
               <FaCartShopping size={23} />
             </Link>
